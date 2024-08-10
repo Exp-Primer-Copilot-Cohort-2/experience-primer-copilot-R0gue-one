@@ -1,11 +1,3 @@
-function calculateSquare(number) {
-    return number * number;
-}
-
-function calculateCube(number) {
-    return number * number * number;
-}
-
-function mod(number, divisor) {
-    return number % divisor; 
+function calculateNumbers(number1, number2) {
+    return number1 + number2;
 }
