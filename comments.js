@@ -1,34 +1,18 @@
-// Create a web server
-// Create a route for /comments
-// Create a route for /comments/new
-// Create a route for /comments/:id
-// Create a route for /comments/:id/edit
-// Create a route for /comments/:id/delete
-
+// Create web server
 var express = require('express');
 var app = express();
 
-app.get('/comments', function(req, res) {
-  res.send('This is the comments page');
+// Create a route
+app.get('/', function(req, res) {
+    res.send('Hello, World!');
 });
 
-app.get('/comments/new', function(req, res) {
-  res.send('This is the new comments page');
-});
-
+// Create a route with a parameter
 app.get('/comments/:id', function(req, res) {
-  res.send('This is the comments page for ' + req.params.id);
+    res.send('The comment id is: ' + req.params.id);
 });
 
-app.get('/comments/:id/edit', function(req, res) {
-  res.send('This is the edit comments page for ' + req.params.id);
-});
-
-app.get('/comments/:id/delete', function(req, res) {
-  res.send('This is the delete comments page for ' + req.params.id);
-});
-
+// Start the server
 app.listen(3000, function() {
-  console.log('Server is listening on port 3000');
+    console.log('Server is running on http://localhost:3000');
 });
-
