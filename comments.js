@@ -1,18 +1,34 @@
-// create a web server
-// 1. load the express module
+// Create a web server
+// Create a route for /comments
+// Create a route for /comments/new
+// Create a route for /comments/:id
+// Create a route for /comments/:id/edit
+// Create a route for /comments/:id/delete
+
 var express = require('express');
-// 2. create a web server
 var app = express();
-// 3. define a route
-app.get('/', function(request, response) {
-    response.send('Hello World');
+
+app.get('/comments', function(req, res) {
+  res.send('This is the comments page');
 });
-// 4. listen on a port
+
+app.get('/comments/new', function(req, res) {
+  res.send('This is the new comments page');
+});
+
+app.get('/comments/:id', function(req, res) {
+  res.send('This is the comments page for ' + req.params.id);
+});
+
+app.get('/comments/:id/edit', function(req, res) {
+  res.send('This is the edit comments page for ' + req.params.id);
+});
+
+app.get('/comments/:id/delete', function(req, res) {
+  res.send('This is the delete comments page for ' + req.params.id);
+});
+
 app.listen(3000, function() {
-    console.log('Server is listening on port 3000');
+  console.log('Server is listening on port 3000');
 });
-// 5. run the server
-// $ node comments.js
-// open a browser and go to http://localhost:3000
-// you should see "Hello World" on the page
-// you should see "Server is listening on port 3000" in the terminal
+
